@@ -135,7 +135,47 @@ const policeStationIcon = L.icon({
 // Call the function to show current location
 showCurrentLocation();
 
+const name = "Chaitanya";
+const email = "chaitanya@gmail.com";
+function sendEmergencyNotification(){
+    Papa.parse('./Data/details.csv', {
+        download: true,
+        header: true,
+        complete: (results) => {
+            // Filter the rows to find the one matching the email
+            const matchingRow = results.data.find(row => row.email === email);
+
+            if (matchingRow) {
+                const contact1 = matchingRow["emergency-contact-1"];
+                const contact2 = matchingRow["emergency-contact-2"];
+                console.log(contact1);
+                console.log(contact2);
+                
+
+                if (contact1 || contact2) {
+                    // Compose the emergency message
+                    const message = `
+                        Name: ${name}
+                        Email: ${email}
+                        Location: [Fetching current location...]
+                    `;
+
+                } else {
+                    alert("No emergency contacts found for the given email.");
+                }
+            } else {
+                alert("No matching email found in the CSV file.");
+            }
+        },
+        error: (error) => {
+            console.error("Error loading CSV:", error);
+            alert("Failed to load emergency contact details.");
+        }
+    });
+}
+
 document.querySelector('#sos').addEventListener('click', ()=>{
     showNearestCommunityCenter();
+    sendEmergencyNotification();
     alert('Alert sent to nearest community centers and emergency contacts');
 });
