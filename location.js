@@ -23,7 +23,6 @@ function showCurrentLocation() {
 
             // Store current location for further use
             currentLocation = { latitude, longitude };
-            console.log(currentLocation);
             
         },
         (error) => {
@@ -59,7 +58,6 @@ function showNearestCommunityCenter() {
                 nearestCenter = { lat, lon, type };
             }
         });
-        console.log(minDistance);
         if(minDistance > 5) {
             alert("Could not find community center nearby!");
             return ;
