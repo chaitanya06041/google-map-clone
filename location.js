@@ -134,6 +134,8 @@ const policeStationIcon = L.icon({
 
 // Call the function to show current location
 showCurrentLocation();
-setTimeout(()=>{
+
+document.querySelector('#sos').addEventListener('click', ()=>{
     showNearestCommunityCenter();
-}, 1000);
+    alert('Alert sent to nearest community centers and emergency contacts');
+});
