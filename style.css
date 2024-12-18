@@ -1,0 +1,63 @@
+#map {
+    height: 75vh;
+    border-radius: 10px;
+    margin: 5vh;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+.con {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}
+input {
+    width: 45%;
+    padding: 8px;
+}
+.autocomplete-list {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+    width: 90%;
+}
+.autocomplete-list div {
+    padding: 8px;
+    cursor: pointer;
+}
+.autocomplete-list div:hover {
+    background-color: #e9e9e9;
+}
+
+.filter-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for the grid layout */
+    grid-template-rows: auto auto auto auto; /* 4 rows with automatic height */
+    gap: 10px; /* Add space between items */
+  }
+  
+  .filter-container label {
+    display: flex; /* Align checkbox and text horizontally */
+    align-items: center; /* Vertically align checkbox and text */
+  }
+  
+  .filter-container label:nth-child(1) {
+    grid-column: 1 / 3; /* Make the first label span across both columns */
+    justify-content: center; /* Center the first label horizontally */
+  }
+  
+  .filter-container label:nth-child(n+2) {
+    grid-column: span 1; /* Let the rest of the items span a single column */
+  }
+  
+
+  .leaflet-routing-container {
+    display: none !important;
+}

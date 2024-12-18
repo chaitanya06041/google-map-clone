@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune City Map</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="con">
+            <div style="position: relative;">
+                <input type="text" id="source" placeholder="Enter Source Place">
+                <div id="sourceSuggestions" class="autocomplete-list"></div>
+            </div>
+            <div style="position: relative;">
+                <input type="text" id="destination" placeholder="Enter Destination Place">
+                <div id="destinationSuggestions" class="autocomplete-list"></div>
+            </div>
+        </div>
+        <button id="searchButton">Search</button>
+    </div>
+    <div class="filter-container">
+        <label><input type="checkbox" id="selectAll" checked> Select All</label>
+        <label><input type="checkbox" class="crime-filter" data-crime="rape" checked> Rape</label>
+        <label><input type="checkbox" class="crime-filter" data-crime="murder" checked> Murder</label>
+        <label><input type="checkbox" class="crime-filter" data-crime="robbery" checked> Robbery</label>
+        <label><input type="checkbox" class="crime-filter" data-crime="carjacking" checked> Carjacking</label>
+        <label><input type="checkbox" class="crime-filter" data-crime="stalking" checked> Stalking</label>
+        <label><input type="checkbox" class="crime-filter" data-crime="kidnapping" checked> Kidnapping</label>
+    </div>
+    
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script src="script.js"></script>
+    <script src="auto.js"></script>
+</body>
+</html>
