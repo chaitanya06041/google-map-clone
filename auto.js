@@ -21,5 +21,6 @@ function autocomplete(inputElement, suggestionsElement) {
     });
 }
 
+
 autocomplete(document.getElementById('source'), document.getElementById('sourceSuggestions'));
 autocomplete(document.getElementById('destination'), document.getElementById('destinationSuggestions'));
