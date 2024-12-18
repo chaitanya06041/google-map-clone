@@ -59,6 +59,12 @@ function showNearestCommunityCenter() {
                 nearestCenter = { lat, lon, type };
             }
         });
+        console.log(minDistance);
+        if(minDistance > 5) {
+            alert("Could not find community center nearby!");
+            return ;
+        }
+        
 
         if (nearestCenter) {
             const icon = nearestCenter.type.toLowerCase() === "hospital" ? hospitalIcon : policeStationIcon;
